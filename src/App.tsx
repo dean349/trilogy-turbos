@@ -1,6 +1,6 @@
 
 import { motion } from 'framer-motion';
-import { Wrench, Zap, Settings, ShieldCheck, ChevronRight, Phone } from 'lucide-react';
+import { Wrench, Zap, Settings, ShieldCheck, ChevronRight } from 'lucide-react';
 
 function App() {
   return (
@@ -30,22 +30,43 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-brand-orange/10 to-background/95 z-10" />
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1610647752706-3bb12232b3ab?q=80&w=2525&auto=format&fit=crop')] bg-cover bg-center opacity-40 mix-blend-overlay" />
-        </div>
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative flex min-h-[100svh] w-full items-center justify-center overflow-hidden bg-black pt-32 pb-20">
+        {/* Background plate */}
+        <picture className="pointer-events-none absolute inset-0 z-0">
+          <img
+            src="/assets/hero/hero-turbo.png"
+            alt="Close-up of a billet-wheel turbocharger with a glowing red-hot turbine housing."
+            loading="eager"
+            // @ts-ignore
+            fetchpriority="high"
+            decoding="async"
+            className="h-full w-full object-cover object-center opacity-80"
+          />
+        </picture>
+
+        {/* Cinematic scrim */}
+        <div aria-hidden="true" className="absolute inset-0 z-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.95)_0%,rgba(0,0,0,0.7)_40%,rgba(0,0,0,0.15)_75%,rgba(0,0,0,0.45)_100%)]" />
+        <div aria-hidden="true" className="absolute inset-0 z-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.55)_0%,transparent_25%,transparent_65%,rgba(0,0,0,0.95)_100%)]" />
+
+        {/* Subtle brand-color heat bloom */}
+        <div aria-hidden="true" className="absolute -right-40 top-1/2 z-0 h-[560px] w-[560px] -translate-y-1/2 rounded-full bg-brand-orange/20 blur-[120px]" />
+        <div aria-hidden="true" className="absolute -left-52 bottom-0 z-0 h-[420px] w-[420px] rounded-full bg-brand-cyan/15 blur-[120px]" />
+
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 text-left">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="max-w-3xl"
           >
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-black text-white uppercase tracking-tighter leading-[0.9]">
-              Precision <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-cyan">Performance</span> <br />
-              Engineering
+            <p className="mb-5 flex items-center gap-3 font-display text-sm font-semibold uppercase tracking-[0.35em] text-brand-cyan">
+              <span className="h-px w-8 bg-brand-cyan/60" />
+              Custom Turbo &amp; Performance Tuning
+            </p>
+
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-display font-black text-white uppercase tracking-tighter leading-[0.9]">
+              We Build <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-cyan">Monsters</span>
             </h1>
           </motion.div>
           
@@ -53,25 +74,28 @@ function App() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-6 max-w-2xl mx-auto text-xl text-gray-400 font-light"
+            className="mt-6 max-w-xl text-xl text-gray-300 font-light leading-relaxed"
           >
-            Custom turbo builds, extreme upgrades, and diagnostics for those who demand more than factory limits. We build monsters.
+            Billet-wheel turbochargers, hand-built engine setups, and dyno-proven tunes. No compromises, no crate parts — just brutal, reliable power engineered to your spec.
           </motion.p>
           
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-10 flex justify-center gap-4"
+            className="mt-10 flex flex-col sm:flex-row gap-4"
           >
-            <a href="#services" className="bg-brand-orange hover:bg-orange-600 text-white px-8 py-4 rounded font-bold uppercase tracking-widest transition-all transform hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(255,90,31,0.3)] flex items-center gap-2">
-              Explore Builds <ChevronRight className="w-5 h-5" />
+            <a href="#services" className="bg-brand-orange hover:bg-orange-600 text-black px-8 py-4 rounded font-display font-bold uppercase tracking-widest transition-all transform hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(255,90,31,0.3)] flex items-center justify-center gap-2">
+              Start Your Build <ChevronRight className="w-5 h-5" />
             </a>
-            <a href="tel:5551234567" className="bg-white/5 hover:bg-white/10 text-white border border-white/10 px-8 py-4 rounded font-bold uppercase tracking-widest transition-all flex items-center gap-2 backdrop-blur-sm">
-              <Phone className="w-5 h-5" /> Contact Shop
+            <a href="#builds" className="bg-white/5 hover:bg-white/10 text-white border border-white/20 px-8 py-4 rounded font-display font-bold uppercase tracking-widest transition-colors flex items-center justify-center gap-2 backdrop-blur-sm hover:border-brand-cyan/60">
+              See The Builds
             </a>
           </motion.div>
         </div>
+        
+        {/* Bottom hairline */}
+        <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-brand-orange/40 to-transparent" />
       </section>
 
       {/* Trust Bar */}
