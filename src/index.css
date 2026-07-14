@@ -1,17 +1,22 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../tailwind.config.js";
 
 @layer base {
   body {
-    @apply bg-background text-foreground antialiased font-sans selection:bg-brand-orange selection:text-white;
+    @apply bg-[#0A0A0B] text-[#F8FAFC] antialiased font-sans selection:bg-[#FF5A1F] selection:text-white;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display tracking-tight;
+    @apply font-sans tracking-tight;
   }
 }
 
 .gradient-text {
-  @apply text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-cyan;
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-[#FF5A1F] to-[#00F0FF];
 }
+
+.bg-background { background-color: #0A0A0B; }
+.text-foreground { color: #F8FAFC; }
+.bg-brand-orange { background-color: #FF5A1F; }
+.text-brand-orange { color: #FF5A1F; }
+.text-brand-cyan { color: #00F0FF; }
