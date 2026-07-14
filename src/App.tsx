@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import { Wrench, Zap, Settings, ShieldCheck, ChevronRight, Phone } from 'lucide-react';
 
