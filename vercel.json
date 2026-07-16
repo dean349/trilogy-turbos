@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "assets/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/services", "dest": "/repair-services.html" },
+    { "src": "/sales", "dest": "/vehicle-sales.html" },
+    { "src": "/parts", "dest": "/parts-store.html" },
+    { "src": "/about", "dest": "/about.html" },
+    { "src": "/contact", "dest": "/contact.html" },
+    { "src": "/(.*)", "dest": "/$1" }
+  ]
+}
