@@ -310,111 +310,17 @@
         </div>
     </footer>
 
+
 <script>
-    // --- Mobile Menu Toggle ---
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (menuToggle && mobileMenu) {
-        menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-    }
-
-    // --- Cart Engine ---
-    let cart = {}; // { id: { name, price, icon, qty } }
-
-    function formatPrice(cents) {
-        return '$' + cents.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    }
-
-    function renderCart() {
-        const list = document.getElementById('cart-items-list');
-        const emptyMsg = document.getElementById('cart-empty-msg');
-        const totalEl = document.getElementById('cart-total');
-        const badge = document.getElementById('cart-badge');
-
-        // Remove old dynamic items
-        list.querySelectorAll('.cart-item-row').forEach(el => el.remove());
-
-        const ids = Object.keys(cart);
-        const totalQty = ids.reduce((sum, id) => sum + cart[id].qty, 0);
-        const totalPrice = ids.reduce((sum, id) => sum + cart[id].price * cart[id].qty, 0);
-
-        if (ids.length === 0) {
-            emptyMsg.classList.remove('hidden');
-        } else {
-            emptyMsg.classList.add('hidden');
-            ids.forEach(id => {
-                const item = cart[id];
-                const row = document.createElement('div');
-                row.className = 'cart-item-row flex gap-4 border-b border-white/10 pb-4 items-start';
-                row.innerHTML = `
-                    <div class="w-12 h-12 shrink-0 bg-surface-container-high rounded border border-white/10 flex items-center justify-center">
-                        <span class="material-symbols-outlined text-on-surface-variant text-[20px]">${item.icon}</span>
-                    </div>
-                    <div class="flex-grow min-w-0">
-                        <h4 class="font-headline-sm text-sm uppercase truncate">${item.name}</h4>
-                        <div class="flex items-center gap-2 mt-1">
-                            <button class="w-6 h-6 rounded bg-surface-container-high border border-white/10 text-xs flex items-center justify-center hover:bg-primary/20 transition-colors"
-                                onclick="changeQty('${id}', -1)">−</button>
-                            <span class="font-label-caps text-xs text-on-surface-variant w-4 text-center">${item.qty}</span>
-                            <button class="w-6 h-6 rounded bg-surface-container-high border border-white/10 text-xs flex items-center justify-center hover:bg-primary/20 transition-colors"
-                                onclick="changeQty('${id}', 1)">+</button>
-                        </div>
-                        <span class="text-primary font-bold text-sm mt-1 block">${formatPrice(item.price * item.qty)}</span>
-                    </div>
-                    <button class="shrink-0 text-on-surface-variant hover:text-red-400 transition-colors mt-1" onclick="removeItem('${id}')">
-                        <span class="material-symbols-outlined text-[20px]">delete</span>
-                    </button>
-                `;
-                list.appendChild(row);
-            });
-        }
-
-        totalEl.textContent = formatPrice(totalPrice);
-        badge.textContent = totalQty;
-        if (totalQty > 0) {
-            badge.classList.remove('hidden');
-        } else {
-            badge.classList.add('hidden');
-        }
-    }
-
-    function addToCart(id, name, price, icon) {
-        if (cart[id]) {
-            cart[id].qty++;
-        } else {
-            cart[id] = { name, price: parseFloat(price), icon, qty: 1 };
-        }
-        // Open cart drawer
-        document.getElementById('cartDrawer').classList.add('drawer-open');
-        renderCart();
-    }
-
-    function changeQty(id, delta) {
-        if (!cart[id]) return;
-        cart[id].qty += delta;
-        if (cart[id].qty <= 0) delete cart[id];
-        renderCart();
-    }
-
-    function removeItem(id) {
-        delete cart[id];
-        renderCart();
-    }
-
-    // Attach Add to Cart listeners
-    document.querySelectorAll('[data-cart-add]').forEach(btn => {
-        btn.addEventListener('click', () => {
-            addToCart(
-                btn.dataset.id,
-                btn.dataset.name,
-                btn.dataset.price,
-                btn.dataset.icon
-            );
-        });
+  (function () {
+    var btn = document.getElementById('menu-toggle');
+    var menu = document.getElementById('mobile-menu');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', function () {
+      menu.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', menu.classList.contains('hidden') ? 'false' : 'true');
     });
-
-    // Initial render
-    renderCart();
+  })();
 </script>
 </body>
 </html>
