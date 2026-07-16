@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Contact & Location | Trilogy Turbos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        try{
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        "colors": {
+                            "primary-container": "#ff571a",
+                            "surface-container-high": "#222a3d",
+                            "surface-container": "#171f33",
+                            "inverse-on-surface": "#283044",
+                            "secondary-fixed-dim": "#b9c8de",
+                            "inverse-primary": "#ae3200",
+                            "on-tertiary": "#263143",
+                            "on-surface": "#dae2fd",
+                            "surface-tint": "#ffb59e",
+                            "secondary-fixed": "#d4e4fa",
+                            "surface-container-lowest": "#060e20",
+                            "on-secondary": "#233143",
+                            "tertiary": "#bcc7de",
+                            "inverse-surface": "#dae2fd",
+                            "on-primary": "#5e1700",
+                            "primary": "#ffb59e",
+                            "on-surface-variant": "#e6beb2",
+                            "outline": "#ad897e",
+                            "on-background": "#dae2fd",
+                            "on-error": "#690005",
+                            "surface-container-low": "#131b2e",
+                            "surface-dim": "#0b1326",
+                            "surface": "#0b1326",
+                            "background": "#0b1326",
+                            "secondary": "#b9c8de",
+                            "error": "#ffb4ab",
+                            "surface-bright": "#31394d"
+                        },
+                        "borderRadius": {
+                            "DEFAULT": "0.125rem",
+                            "lg": "0.25rem",
+                            "xl": "0.5rem",
+                            "full": "0.75rem"
+                        },
+                        "spacing": {
+                            "gutter": "24px",
+                            "margin-desktop": "40px",
+                            "unit": "8px",
+                            "container-max": "1280px",
+                            "margin-mobile": "16px"
+                        },
+                        "fontFamily": {
+                            "display-lg": ["Archivo Narrow"],
+                            "headline-sm": ["Archivo Narrow"],
+                            "headline-md": ["Archivo Narrow"],
+                            "body-lg": ["Inter"],
+                            "body-md": ["Inter"],
+                            "label-caps": ["JetBrains Mono"]
+                        }
+                    }
+                }
+            }
+        }catch(_e){}
+    </script>
+    <link rel="stylesheet" href="assets/css/base.css">
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased overflow-x-hidden pt-[100px]">
+
+    <!-- TopNavBar -->
+    <nav class="bg-[#0d2142] fixed top-0 w-full z-50 border-b border-white/10 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-2">
+        <div class="flex items-center">
+            <img alt="Trilogy Turbos Logo" class="h-16 w-auto object-contain" src="assets/logo.png">
+        </div>
+        <div class="hidden md:flex gap-8 items-center absolute left-1/2 -translate-x-1/2">
+<a class="text-white hover:text-primary transition-colors font-body-md" href="index.html">Home</a>
+<a class="text-white hover:text-primary transition-colors font-body-md" href="repair-services.html">Services</a>
+<a class="text-white hover:text-primary transition-colors font-body-md" href="vehicle-sales.html">Sales</a>
+<a class="text-white hover:text-primary transition-colors font-body-md" href="parts-store.html">Parts</a>
+<a class="text-white hover:text-primary transition-colors font-body-md" href="about.html">About</a>
+<a class="text-primary hover:text-primary transition-colors font-body-md border-b-2 border-primary pb-1" href="contact.html">Contact</a>
+</div>
+        <div class="flex items-center gap-4">
+            <button class="md:hidden text-white" id="menu-toggle">
+                <span class="material-symbols-outlined text-[28px]">menu</span>
+            </button>
+        </div>
+    </nav>
+
+<!-- Mobile drawer -->
+<div id="mobile-menu" class="fixed top-[80px] left-0 w-full z-40 bg-[#0d2142] border-b border-white/10 hidden md:hidden">
+<div class="flex flex-col px-margin-mobile py-4">
+    <a class="text-white hover:text-primary transition-colors py-3 border-b border-white/10" href="index.html">Home</a>
+    <a class="text-white hover:text-primary transition-colors py-3 border-b border-white/10" href="repair-services.html">Services</a>
+    <a class="text-white hover:text-primary transition-colors py-3 border-b border-white/10" href="vehicle-sales.html">Sales</a>
+    <a class="text-white hover:text-primary transition-colors py-3 border-b border-white/10" href="parts-store.html">Parts</a>
+    <a class="text-white hover:text-primary transition-colors py-3 border-b border-white/10" href="about.html">About</a>
+    <a class="text-primary hover:text-primary transition-colors py-3" href="contact.html">Contact</a>
+</div>
+</div>
+
+    <!-- Header Section -->
+    <section class="py-[60px] bg-surface-container-lowest border-y border-metallic">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
+            <h1 class="font-display-lg text-4xl md:text-5xl uppercase mb-4">Contact & Location</h1>
+            <p class="font-body-lg text-lg text-on-surface-variant max-w-2xl mx-auto">Have a question about a repair, searching for a specific part, or want to schedule a test drive? Reach out to us.</p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="py-[80px]">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-16">
+            
+            <!-- Contact Info & WhatsApp -->
+            <div class="space-y-8">
+                <div class="w-full max-w-[320px] aspect-square rounded-xl border border-metallic overflow-hidden bg-surface-container-lowest bg-cover bg-center mb-6" style="background-image: url('assets/storefront-sign.png');"></div>
+                <div>
+                    <h2 class="font-headline-md text-3xl uppercase mb-6 text-on-surface">Get In Touch</h2>
+                    <p class="text-on-surface-variant font-body-md mb-8">We proudly offer multilingual customer support in English, Spanish, and Brazilian Portuguese.</p>
+                </div>
+                
+                <ul class="space-y-6">
+                    <li class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-surface-container border border-metallic rounded flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-primary">location_on</span>
+                        </div>
+                        <div>
+                            <h4 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Visit The Shop</h4>
+                            <p class="font-body-lg text-body-lg text-on-surface">902 Old Dixie Hwy, Bay #3<br>Lake Park, FL 33403</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-surface-container border border-metallic rounded flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-primary">phone</span>
+                        </div>
+                        <div>
+                            <h4 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Call Us</h4>
+                            <p class="font-body-lg text-body-lg text-on-surface">(561) 882-4000</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-surface-container border border-metallic rounded flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-primary">schedule</span>
+                        </div>
+                        <div>
+                            <h4 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Operating Hours</h4>
+                            <p class="font-body-lg text-body-lg text-on-surface">Monday - Friday: 8:00 AM - 6:00 PM<br><span class="text-on-surface-variant">Saturday - Sunday: Closed</span></p>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- WhatsApp CTA -->
+                <div class="bg-[#25D366]/10 border border-[#25D366]/30 p-6 rounded-xl mt-12 flex items-center gap-6">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-12 h-12" loading="lazy" decoding="async">
+                    <div>
+                        <h4 class="font-headline-sm uppercase text-lg text-white mb-1">Chat on WhatsApp</h4>
+                        <p class="text-sm text-on-surface-variant mb-3">Instant replies. Send us photos of parts or damage.</p>
+                        <button class="bg-[#25D366] text-black px-4 py-2 rounded uppercase font-label-caps font-bold hover:bg-[#20b858] transition-colors text-xs">
+                            Message Us Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="border-metallic border rounded-xl p-8 bg-surface-container-lowest card-glow relative overflow-hidden h-fit">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-primary-container/10 blur-2xl rounded-full translate-x-1/2 -translate-y-1/2"></div>
+                
+                <h3 class="font-headline-sm text-2xl uppercase mb-6 relative z-10">Send a Message</h3>
+                <form class="space-y-4 relative z-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block font-label-caps text-xs text-on-surface-variant uppercase mb-2">Name</label>
+                            <input type="text" class="w-full bg-surface-container border border-metallic text-on-surface rounded-lg p-3 focus:outline-none focus:border-primary transition-colors" placeholder="Your Name">
+                        </div>
+                        <div>
+                            <label class="block font-label-caps text-xs text-on-surface-variant uppercase mb-2">Email</label>
+                            <input type="email" class="w-full bg-surface-container border border-metallic text-on-surface rounded-lg p-3 focus:outline-none focus:border-primary transition-colors" placeholder="Email Address">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block font-label-caps text-xs text-on-surface-variant uppercase mb-2">Subject</label>
+                        <select class="w-full bg-surface-container border border-metallic text-on-surface rounded-lg p-3 focus:outline-none focus:border-primary transition-colors appearance-none">
+                            <option>Auto Repair Inquiry</option>
+                            <option>Parts Inquiry</option>
+                            <option>Vehicle Sales / Trade-In</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block font-label-caps text-xs text-on-surface-variant uppercase mb-2">Message</label>
+                        <textarea class="w-full bg-surface-container border border-metallic text-on-surface rounded-lg p-3 focus:outline-none focus:border-primary transition-colors h-32 resize-none" placeholder="How can we help you?"></textarea>
+                    </div>
+                    <button type="button" class="w-full bg-primary-container text-white px-6 py-4 rounded uppercase font-label-caps font-bold hover:opacity-90 transition-opacity mt-4 flex justify-center items-center gap-2">
+                        Send Message <span class="material-symbols-outlined">send</span>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Map Integration -->
+    <section class="border-y border-metallic h-[400px] w-full relative">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3561.940248834614!2d-80.065538!3d26.7781702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d8d69b357e6029%3A0xc6c4293f773ff421!2s902%20Old%20Dixie%20Hwy%20%233%2C%20Lake%20Park%2C%20FL%2033403!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+            width="100%" 
+            height="100%" 
+            style="border:0; filter: invert(90%) hue-rotate(180deg) brightness(85%) contrast(110%);" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <!-- Overlay to ensure the map matches the dark mode aesthetic seamlessly -->
+        <div class="absolute inset-0 bg-surface-container-lowest/20 pointer-events-none"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-lowest w-full border-t border-outline-variant/20">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-20 max-w-container-max mx-auto">
+            <div class="col-span-1 md:col-span-4 flex flex-col md:flex-row items-start md:items-center gap-8 mb-8 md:flex-col">
+                <div class="flex items-center"><img alt="Trilogy Turbos Logo" class="h-[120px] w-auto object-contain mx-auto" src="assets/logo.png"></div>
+                <div class="flex flex-wrap gap-6 font-body-md text-body-md text-on-surface-variant justify-center">
+                    <span class="hover:text-primary-container transition-colors">Lake Park, FL 33403</span>
+                    <span class="hover:text-primary-container transition-colors">(561) 555-0123</span>
+                    <span class="hover:text-primary-container transition-colors">Mon-Fri: 8AM-6PM</span>
+                    <span class="hover:text-primary-container transition-colors">5-Star Google Rated</span>
+                </div>
+            </div>
+            <div class="col-span-1 md:col-span-4 border-t border-outline-variant/20 pt-8 mt-4 text-center md:text-left">
+                <p class="font-body-md text-body-md text-on-surface-variant">© 2024 Trilogy Turbos LLC. High-Velocity Precision.</p>
+            </div>
+        </div>
+    </footer>
+
+<script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        if (menuToggle && menu) {
+            menuToggle.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>

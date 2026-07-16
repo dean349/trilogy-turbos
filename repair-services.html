@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Auto Repair & Specialty Services | Trilogy Turbos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <script id="tailwind-config">
+        try{
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        "colors": {
+                            "primary-container": "#ff571a",
+                            "surface-container-high": "#222a3d",
+                            "surface-container": "#171f33",
+                            "inverse-on-surface": "#283044",
+                            "secondary-fixed-dim": "#b9c8de",
+                            "inverse-primary": "#ae3200",
+                            "on-tertiary": "#263143",
+                            "on-surface": "#dae2fd",
+                            "surface-tint": "#ffb59e",
+                            "secondary-fixed": "#d4e4fa",
+                            "surface-container-lowest": "#060e20",
+                            "on-secondary": "#233143",
+                            "tertiary": "#bcc7de",
+                            "inverse-surface": "#dae2fd",
+                            "on-primary": "#5e1700",
+                            "primary": "#ffb59e",
+                            "on-surface-variant": "#e6beb2",
+                            "outline": "#ad897e",
+                            "on-background": "#dae2fd",
+                            "on-error": "#690005",
+                            "surface-container-low": "#131b2e",
+                            "surface-dim": "#0b1326",
+                            "surface": "#0b1326",
+                            "background": "#0b1326",
+                            "secondary": "#b9c8de",
+                            "error": "#ffb4ab",
+                            "surface-bright": "#31394d"
+                        },
+                        "borderRadius": {
+                            "DEFAULT": "0.125rem",
+                            "lg": "0.25rem",
+                            "xl": "0.5rem",
+                            "full": "0.75rem"
+                        },
+                        "spacing": {
+                            "gutter": "24px",
+                            "margin-desktop": "40px",
+                            "unit": "8px",
+                            "container-max": "1280px",
+                            "margin-mobile": "16px"
+                        },
+                        "fontFamily": {
+                            "display-lg": ["Archivo Narrow"],
+                            "display-lg-mobile": ["Archivo Narrow"],
+                            "headline-sm": ["Archivo Narrow"],
+                            "headline-md": ["Archivo Narrow"],
+                            "body-lg": ["Inter"],
+                            "body-md": ["Inter"],
+                            "label-caps": ["JetBrains Mono"]
+                        },
+                        "fontSize": {
+                            "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                            "display-lg-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "700" }],
+                            "headline-sm": ["24px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                            "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                            "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                            "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                            "label-caps": ["14px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500" }]
+                        }
+                    }
+                }
+            }
+        }catch(_e){}
+    </script>
+        <link rel="stylesheet" href="assets/css/base.css">
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased overflow-x-hidden">
+
+    <!-- TopNavBar -->
+    <nav class="bg-[#0d2142] fixed top-0 w-full z-50 border-b border-white/10 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-2">
+        <div class="flex items-center">
+            <img alt="Trilogy Turbos Logo" class="h-16 w-auto object-contain" src="assets/logo.png">
+        </div>
+        <div class="hidden md:flex gap-8 items-center absolute left-1/2 -translate-x-1/2">
+<a class="text-white hover:text-primary transition-colors font-body-md" href="index.html">Home</a>
+<a class="text-primary hover:text-primary transition-colors font-body-md border-b-2 border-primary pb-1" href="repair-services.html">Services</a>
+<a class="text-white hover:text-primary transition-colors font-body-md" href="vehicle-sales.html">Sales</a>
+<a class="text-white hover:text-primary transition-colors font-body-md" href="parts-store.html">Parts</a>
+<a class="text-white hover:text-primary transition-colors font-body-md" href="about.html">About</a>
+<a class="text-white hover:text-primary transition-colors font-body-md" href="contact.html">Contact</a>
+</div>
+        <div class="flex items-center gap-4">
+            <button class="md:hidden text-white" id="menu-toggle">
+                <span class="material-symbols-outlined text-[28px]">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile drawer -->
+<div id="mobile-menu" class="fixed top-[80px] left-0 w-full z-40 bg-[#0d2142] border-b border-white/10 hidden md:hidden">
+<div class="flex flex-col px-margin-mobile py-4">
+    <a class="text-white hover:text-primary transition-colors py-3 border-b border-white/10" href="index.html">Home</a>
+    <a class="text-primary hover:text-primary transition-colors py-3 border-b border-white/10" href="repair-services.html">Services</a>
+    <a class="text-white hover:text-primary transition-colors py-3 border-b border-white/10" href="vehicle-sales.html">Sales</a>
+    <a class="text-white hover:text-primary transition-colors py-3 border-b border-white/10" href="parts-store.html">Parts</a>
+    <a class="text-white hover:text-primary transition-colors py-3 border-b border-white/10" href="about.html">About</a>
+    <a class="text-white hover:text-primary transition-colors py-3" href="contact.html">Contact</a>
+</div>
+</div>
+    
+    <main class="pt-[100px]">
+    <!-- Hero Section -->
+    <section class="relative w-full flex items-center overflow-hidden aspect-[1376/768] min-h-[480px] max-h-screen justify-start md:px-margin-desktop">
+        <img src="assets/hero-services.jpg" alt="Technician performing repairs in the service workshop" fetchpriority="high" class="absolute inset-0 z-0 h-full w-full object-cover object-[center_35%]" loading="eager" decoding="async">
+        <div class="absolute inset-0 z-10" style="background: linear-gradient(to right, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0) 100%);"></div>
+        <div class="relative z-20 max-w-xl w-full px-margin-mobile">
+            <div class="p-6 rounded-xl border border-white/10 shadow-2xl md:pt-4">
+                <h1 class="font-display-lg text-display-lg-mobile md:text-[40px] text-white uppercase mb-4 font-bold leading-tight">
+                    Auto Repair & Specialty Services
+                </h1>
+                <p class="font-body-md text-body-md text-on-surface mb-6 font-bold">
+                    From routine maintenance to complex engine rebuilds and specialty tuning, our state-of-the-art facility provides unmatched mechanical care for all import and domestic vehicles.
+                </p>
+                <div class="flex flex-wrap gap-3">
+                    <a class="bg-primary text-on-primary px-4 py-2 rounded font-label-caps flex items-center gap-2 hover:bg-primary-fixed transition-colors" href="#booking-form" style="background-color: rgb(255, 77, 0); color: rgb(255, 255, 255);">
+                        <span class="material-symbols-outlined" style="color: rgb(255, 255, 255);">calendar_today</span>
+                        Schedule Service
+                    </a>
+                    <a class="border border-white text-white px-4 py-2 rounded font-label-caps flex items-center gap-2 hover:bg-white/10 transition-colors" href="tel:5618824000">
+                        <span class="material-symbols-outlined">phone</span>
+                        Call Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- General Maintenance Grid -->
+    <section class="py-[80px]">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            <h2 class="font-headline-md text-3xl uppercase mb-12 text-center border-b border-metallic pb-4 inline-block w-full">General Maintenance</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+                
+                <!-- Brakes -->
+                <div class="border-metallic border rounded-xl p-8 bg-surface-container-lowest card-glow transition-all">
+                    <span class="material-symbols-outlined text-primary text-[40px] mb-4">album</span>
+                    <h3 class="font-headline-sm text-xl uppercase mb-3 text-on-surface">Brake Services</h3>
+                    <p class="text-on-surface-variant text-sm">Comprehensive brake pad replacement, rotor resurfacing, and caliper diagnostics for ultimate stopping power.</p>
+                </div>
+
+                <!-- A/C -->
+                <div class="border-metallic border rounded-xl p-8 bg-surface-container-lowest card-glow transition-all">
+                    <span class="material-symbols-outlined text-primary text-[40px] mb-4">ac_unit</span>
+                    <h3 class="font-headline-sm text-xl uppercase mb-3 text-on-surface">A/C & Climate</h3>
+                    <p class="text-on-surface-variant text-sm">System recharging, compressor replacements, and leak detection to keep you cool during South Florida summers.</p>
+                </div>
+
+                <!-- Diagnostics -->
+                <div class="border-metallic border rounded-xl p-8 bg-surface-container-lowest card-glow transition-all">
+                    <span class="material-symbols-outlined text-primary text-[40px] mb-4">memory</span>
+                    <h3 class="font-headline-sm text-xl uppercase mb-3 text-on-surface">Engine Diagnostics</h3>
+                    <p class="text-on-surface-variant text-sm">State-of-the-art OBDII scanning and computer diagnostics matching OEM dealership capabilities.</p>
+                </div>
+
+                <!-- Oil -->
+                <div class="border-metallic border rounded-xl p-8 bg-surface-container-lowest card-glow transition-all">
+                    <span class="material-symbols-outlined text-primary text-[40px] mb-4">water_drop</span>
+                    <h3 class="font-headline-sm text-xl uppercase mb-3 text-on-surface">Oil & Fluids</h3>
+                    <p class="text-on-surface-variant text-sm">Premium synthetic oil changes, transmission fluid flushes, and comprehensive fluid level checks.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialty Spotlights -->
+    <section class="py-[80px] bg-surface-container-lowest border-y border-metallic">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            <h2 class="font-headline-md text-3xl uppercase mb-12 text-center border-b border-metallic pb-4 inline-block w-full">Specialty Operations</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+                
+                <!-- Turbo Spotlight -->
+                <div class="border-metallic border rounded-xl overflow-hidden card-glow transition-all group flex flex-col md:flex-row">
+                    <div class="w-full md:w-1/2 h-64 md:h-auto bg-cover bg-center border-r border-metallic" style="background-image: url('assets/turbo-tuning.jpg');"></div>
+                    <div class="w-full md:w-1/2 p-8 flex flex-col justify-center bg-surface-container">
+                        <span class="material-symbols-outlined text-primary text-[32px] mb-4">settings_system_daydream</span>
+                        <h3 class="font-headline-sm text-2xl uppercase mb-3">Turbocharger Tuning</h3>
+                        <p class="text-on-surface-variant text-sm mb-6">Expert turbocharger diagnostics, rebuilding, and high-performance tuning. We extract maximum power and efficiency out of both factory and aftermarket forced induction systems.</p>
+                    </div>
+                </div>
+
+                <!-- Classic Car Spotlight -->
+                <div class="border-metallic border rounded-xl overflow-hidden card-glow transition-all group flex flex-col md:flex-row">
+                    <div class="w-full md:w-1/2 h-64 md:h-auto bg-cover bg-center border-r border-metallic" style="background-image: url('assets/classic-car.jpg');"></div>
+                    <div class="w-full md:w-1/2 p-8 flex flex-col justify-center bg-surface-container">
+                        <span class="material-symbols-outlined text-primary text-[32px] mb-4">directions_car</span>
+                        <h3 class="font-headline-sm text-2xl uppercase mb-3">Classic Car & Fuel Injection</h3>
+                        <p class="text-on-surface-variant text-sm mb-6">Preserving automotive history. We specialize in classic American muscle and import restoration, focusing on complex carburetor tuning and modern fuel injection conversions.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Widget -->
+    <section id="booking-form" class="py-[80px]">
+        <div class="max-w-xl mx-auto px-margin-mobile">
+            <div class="border-metallic border rounded-xl p-8 bg-surface-container-lowest card-glow relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-primary-container/10 blur-2xl rounded-full translate-x-1/2 -translate-y-1/2"></div>
+                
+                <h2 class="font-headline-md text-3xl uppercase mb-2 text-center text-on-surface">Schedule Service</h2>
+                <p class="text-center text-on-surface-variant mb-8 text-sm">Book an appointment online or call us directly.</p>
+
+                <form class="space-y-4 relative z-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block font-label-caps text-xs text-on-surface-variant uppercase mb-2">First Name</label>
+                            <input type="text" class="w-full bg-surface-container border border-metallic text-on-surface rounded-lg p-3 focus:outline-none focus:border-primary transition-colors" placeholder="John">
+                        </div>
+                        <div>
+                            <label class="block font-label-caps text-xs text-on-surface-variant uppercase mb-2">Last Name</label>
+                            <input type="text" class="w-full bg-surface-container border border-metallic text-on-surface rounded-lg p-3 focus:outline-none focus:border-primary transition-colors" placeholder="Doe">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block font-label-caps text-xs text-on-surface-variant uppercase mb-2">Vehicle (Year, Make, Model)</label>
+                        <input type="text" class="w-full bg-surface-container border border-metallic text-on-surface rounded-lg p-3 focus:outline-none focus:border-primary transition-colors" placeholder="e.g. 2018 Toyota Tacoma">
+                    </div>
+                    <div>
+                        <label class="block font-label-caps text-xs text-on-surface-variant uppercase mb-2">Service Needed</label>
+                        <select class="w-full bg-surface-container border border-metallic text-on-surface rounded-lg p-3 focus:outline-none focus:border-primary transition-colors appearance-none">
+                            <option>General Maintenance</option>
+                            <option>Turbo Diagnostics</option>
+                            <option>Classic Car Service</option>
+                            <option>A/C Repair</option>
+                            <option>Other / Unsure</option>
+                        </select>
+                    </div>
+                    <button type="button" class="w-full bg-primary-container text-white px-6 py-4 rounded uppercase font-label-caps font-bold hover:opacity-90 transition-opacity mt-4 flex justify-center items-center gap-2">
+                        Request Appointment <span class="material-symbols-outlined">send</span>
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    </main>
+    <!-- Footer -->
+    <footer class="bg-surface-container-lowest w-full border-t border-outline-variant/20">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-20 max-w-container-max mx-auto">
+            <div class="col-span-1 md:col-span-4 flex flex-col md:flex-row items-start md:items-center gap-8 mb-8 md:flex-col">
+                <div class="flex items-center"><img alt="Trilogy Turbos Logo" class="h-[120px] w-auto object-contain mx-auto" src="assets/logo.png"></div>
+                <div class="flex flex-wrap gap-6 font-body-md text-body-md text-on-surface-variant justify-center">
+                    <span class="hover:text-primary-container transition-colors">Lake Park, FL 33403</span>
+                    <span class="hover:text-primary-container transition-colors">(561) 555-0123</span>
+                    <span class="hover:text-primary-container transition-colors">Mon-Fri: 8AM-6PM</span>
+                    <span class="hover:text-primary-container transition-colors">5-Star Google Rated</span>
+                </div>
+            </div>
+            <div class="col-span-1 md:col-span-4 border-t border-outline-variant/20 pt-8 mt-4 text-center md:text-left">
+                <p class="font-body-md text-body-md text-on-surface-variant">© 2024 Trilogy Turbos LLC. High-Velocity Precision.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+          const btn = document.getElementById('menu-toggle');
+          const menu = document.getElementById('mobile-menu');
+          if (!btn || !menu) return;
+          btn.addEventListener('click', function () {
+            menu.classList.toggle('hidden');
+          });
+        })();
+    </script>
+    <script src="public/devtoolbar.js" defer></script>
+<script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        if (menuToggle && menu) {
+            menuToggle.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>

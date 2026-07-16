@@ -1,0 +1,102 @@
+:root {
+  /* --- Fluid Typography --- */
+  --step--1: clamp(0.83rem, 0.78rem + 0.24vw, 0.94rem); /* Small specs / labels */
+  --step-0:  clamp(1.00rem, 0.93rem + 0.36vw, 1.13rem); /* Body text */
+  --step-1:  clamp(1.20rem, 1.08rem + 0.60vw, 1.50rem); /* Subheadings / tags */
+  --step-2:  clamp(1.44rem, 1.24rem + 1.00vw, 2.00rem); /* Card titles */
+  --step-3:  clamp(1.73rem, 1.40rem + 1.65vw, 2.67rem); /* Section titles */
+  --step-4:  clamp(2.07rem, 1.55rem + 2.60vw, 3.55rem); /* Hero H1 headers */
+
+  /* --- Fluid Spacing --- */
+  --space-xs: clamp(0.50rem, 0.40rem + 0.50vw, 0.75rem);
+  --space-sm: clamp(0.75rem, 0.60rem + 0.75vw, 1.25rem);
+  --space-md: clamp(1.00rem, 0.80rem + 1.00vw, 2.00rem);
+  --space-lg: clamp(2.00rem, 1.50rem + 2.50vw, 4.00rem);
+
+  /* --- Layout & Safety Bounds --- */
+  --tap-min: 44px;
+  --content-max: 1280px;
+}
+
+/* --- Resets & Base Standards --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-size: var(--step-0);
+  line-height: 1.6;
+}
+
+img, picture, video, svg, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Global Theme Utility Styles --- */
+.border-metallic {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.card-glow {
+  transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* --- Drawer component for Cart / Checkout --- */
+.drawer {
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 0s linear 0.3s;
+}
+
+.drawer.drawer-open {
+  transform: translateX(0);
+  visibility: visible;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 0s;
+}
+
+/* --- Touch Sizing Rules --- */
+input, select, textarea {
+  font-size: 16px !important; /* Prevents iOS auto-zoom on focus */
+  min-height: 48px;
+}
+
+button, a {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Ensure focus states are accessible */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid #ff571a;
+  outline-offset: 4px;
+}
+
+/* --- Hover Safety Guard (Pointer/Desktop Only) --- */
+@media (hover: hover) and (pointer: fine) {
+  .card-glow:hover {
+    box-shadow: 0 0 35px rgba(255, 87, 26, 0.12);
+    border-color: rgba(255, 181, 158, 0.35);
+    transform: translateY(-4px);
+  }
+}
+
+/* --- Reduced Motion Accessibilty --- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transform: none !important;
+  }
+}

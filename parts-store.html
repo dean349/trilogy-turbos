@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Parts & Performance Store | Trilogy Turbos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        try{
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        "colors": {
+                            "primary-container": "#ff571a",
+                            "surface-container-high": "#222a3d",
+                            "surface-container": "#171f33",
+                            "inverse-on-surface": "#283044",
+                            "secondary-fixed-dim": "#b9c8de",
+                            "inverse-primary": "#ae3200",
+                            "on-tertiary": "#263143",
+                            "on-surface": "#dae2fd",
+                            "surface-tint": "#ffb59e",
+                            "secondary-fixed": "#d4e4fa",
+                            "surface-container-lowest": "#060e20",
+                            "on-secondary": "#233143",
+                            "tertiary": "#bcc7de",
+                            "inverse-surface": "#dae2fd",
+                            "on-primary": "#5e1700",
+                            "primary": "#ffb59e",
+                            "on-surface-variant": "#e6beb2",
+                            "outline": "#ad897e",
+                            "on-background": "#dae2fd",
+                            "on-error": "#690005",
+                            "surface-container-low": "#131b2e",
+                            "surface-dim": "#0b1326",
+                            "surface": "#0b1326",
+                            "background": "#0b1326",
+                            "secondary": "#b9c8de",
+                            "error": "#ffb4ab",
+                            "surface-bright": "#31394d"
+                        },
+                        "borderRadius": {
+                            "DEFAULT": "0.125rem",
+                            "lg": "0.25rem",
+                            "xl": "0.5rem",
+                            "full": "0.75rem"
+                        },
+                        "spacing": {
+                            "gutter": "24px",
+                            "margin-desktop": "40px",
+                            "unit": "8px",
+                            "container-max": "1280px",
+                            "margin-mobile": "16px"
+                        },
+                        "fontFamily": {
+                            "display-lg": ["Archivo Narrow"],
+                            "headline-sm": ["Archivo Narrow"],
+                            "headline-md": ["Archivo Narrow"],
+                            "body-lg": ["Inter"],
+                            "body-md": ["Inter"],
+                            "label-caps": ["JetBrains Mono"]
+                        }
+                    }
+                }
+            }
+        }catch(_e){}
+    </script>
+    <link rel="stylesheet" href="assets/css/base.css">
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased overflow-x-hidden pt-[100px]">
+
+    <!-- TopNavBar -->
+    <nav class="bg-[#0d2142] fixed top-0 w-full z-50 border-b border-white/10 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-2">
+        <div class="flex items-center">
+            <img alt="Trilogy Turbos Logo" class="h-16 w-auto object-contain" src="assets/logo.png">
+        </div>
+        <div class="hidden md:flex gap-8 items-center absolute left-1/2 -translate-x-1/2">
+<a class="text-white hover:text-primary transition-colors font-body-md" href="index.html">Home</a>
+<a class="text-white hover:text-primary transition-colors font-body-md" href="repair-services.html">Services</a>
+<a class="text-white hover:text-primary transition-colors font-body-md" href="vehicle-sales.html">Sales</a>
+<a class="text-primary hover:text-primary transition-colors font-body-md border-b-2 border-primary pb-1" href="parts-store.html">Parts</a>
+<a class="text-white hover:text-primary transition-colors font-body-md" href="about.html">About</a>
+<a class="text-white hover:text-primary transition-colors font-body-md" href="contact.html">Contact</a>
+</div>
+        <div class="flex items-center gap-4">
+            <button id="cart-toggle-btn" class="text-white flex items-center gap-2 hover:text-primary transition-colors relative" onclick="document.getElementById('cartDrawer').classList.toggle('drawer-open')">
+                <span class="material-symbols-outlined text-[28px]">shopping_cart</span>
+                <span id="cart-badge" class="absolute -top-1 -right-1 bg-primary-container text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full hidden">0</span>
+            </button>
+            <button class="md:hidden text-white ml-2">
+                <span class="material-symbols-outlined text-[28px]">menu</span>
+            </button>
+        </div>
+    </nav>
+
+<!-- Mobile drawer -->
+<div id="mobile-menu" class="fixed top-[80px] left-0 w-full z-40 bg-[#0d2142] border-b border-white/10 hidden md:hidden">
+<div class="flex flex-col px-margin-mobile py-4">
+    <a class="text-white hover:text-primary transition-colors py-3 border-b border-white/10" href="index.html">Home</a>
+    <a class="text-white hover:text-primary transition-colors py-3 border-b border-white/10" href="repair-services.html">Services</a>
+    <a class="text-white hover:text-primary transition-colors py-3 border-b border-white/10" href="vehicle-sales.html">Sales</a>
+    <a class="text-primary hover:text-primary transition-colors py-3 border-b border-white/10" href="parts-store.html">Parts</a>
+    <a class="text-white hover:text-primary transition-colors py-3 border-b border-white/10" href="about.html">About</a>
+    <a class="text-white hover:text-primary transition-colors py-3" href="contact.html">Contact</a>
+</div>
+</div>
+
+    <!-- Header & Fitment Filter -->
+    <section class="py-[60px] bg-surface-container-lowest border-b border-metallic relative overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('assets/hero-parts.jpg');"></div>
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 text-center">
+            <h1 class="font-display-lg text-4xl md:text-5xl uppercase mb-8">Performance Parts & Tires</h1>
+            
+            <!-- Smart Fitment Filter -->
+            <div class="bg-surface-container/90 backdrop-blur-md border border-metallic p-6 rounded-xl max-w-4xl mx-auto shadow-2xl">
+                <h3 class="font-label-caps text-primary uppercase text-sm mb-4 tracking-widest">Select Your Vehicle For Exact Fitment</h3>
+                <form class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <select class="bg-surface-container-low border border-metallic text-on-surface rounded p-3 focus:outline-none focus:border-primary">
+                        <option>Year</option>
+                        <option>2024</option>
+                        <option>2023</option>
+                    </select>
+                    <select class="bg-surface-container-low border border-metallic text-on-surface rounded p-3 focus:outline-none focus:border-primary">
+                        <option>Make</option>
+                        <option>Toyota</option>
+                        <option>Ford</option>
+                    </select>
+                    <select class="bg-surface-container-low border border-metallic text-on-surface rounded p-3 focus:outline-none focus:border-primary">
+                        <option>Model</option>
+                        <option>Tacoma</option>
+                        <option>F-150</option>
+                    </select>
+                    <button type="button" class="bg-primary-container text-white px-4 py-3 rounded uppercase font-label-caps font-bold hover:opacity-90 transition-opacity">
+                        Find Parts
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Catalog -->
+    <section class="py-[80px]">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            
+            <!-- GAAF Kit Spotlight -->
+            <div class="mb-16 border-metallic border rounded-xl overflow-hidden card-glow transition-all flex flex-col md:flex-row bg-surface-container-lowest">
+                <div class="w-full md:w-1/3 bg-surface-container-high bg-cover bg-center border-r border-metallic aspect-square" style="background-image: url('assets/gaaf-kit.png');"></div>
+                <div class="w-full md:w-2/3 p-8 flex flex-col justify-center">
+                    <div class="flex justify-between items-start mb-2">
+                        <h2 class="font-headline-md text-3xl uppercase text-on-surface">GAAF Kit by Ecopra USA</h2>
+                        <span class="font-display-lg text-primary text-2xl">$299.00</span>
+                    </div>
+                    <p class="text-on-surface-variant mb-6 text-sm">Authorized dealer and installation center. An innovative air treatment system designed for immediate fuel-saving and emission reduction across all internal combustion engines.</p>
+                    <div class="flex gap-4">
+                        <button class="bg-primary-container text-white px-6 py-3 rounded uppercase font-label-caps font-bold hover:opacity-90 transition-opacity flex items-center gap-2"
+                            data-cart-add data-id="gaaf-kit" data-name="GAAF Kit by Ecopra USA" data-price="299" data-icon="eco">
+                            Add to Cart <span class="material-symbols-outlined">add_shopping_cart</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-between items-end border-b border-metallic pb-4 mb-8">
+                <h2 class="font-headline-md text-2xl uppercase">All Inventory</h2>
+                <div class="text-sm font-label-caps text-on-surface-variant flex gap-4">
+                    <button class="hover:text-primary transition-colors">Tires</button>
+                    <button class="hover:text-primary transition-colors">Brakes</button>
+                    <button class="hover:text-primary transition-colors">Turbos</button>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-16">
+                <!-- Product Card 1 -->
+                <div class="border-metallic border rounded-xl overflow-hidden card-glow transition-all flex flex-col group bg-surface-container-lowest">
+                    <div class="w-full aspect-square bg-surface-container-high bg-cover bg-center border-b border-metallic" style="background-image: url('assets/michelin.png');"></div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="font-headline-sm text-lg uppercase mb-1">Michelin Pilot Sport 4S</h3>
+                        <p class="font-label-caps text-xs text-on-surface-variant mb-4">Size: 245/35ZR19</p>
+                        <div class="mt-auto flex justify-between items-center">
+                            <span class="font-bold text-lg text-primary">$245.00</span>
+                            <button class="text-primary hover:bg-primary/10 p-2 rounded-full transition-colors"
+                                data-cart-add data-id="michelin-sport-4s" data-name="Michelin Pilot Sport 4S" data-price="245" data-icon="tire_repair">
+                                <span class="material-symbols-outlined">add_shopping_cart</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="border-metallic border rounded-xl overflow-hidden card-glow transition-all flex flex-col group bg-surface-container-lowest">
+                    <div class="w-full aspect-square bg-surface-container-high bg-cover bg-center border-b border-metallic" style="background-image: url('assets/garrett-turbo.png');"></div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="font-headline-sm text-lg uppercase mb-1">Garrett GTX3582R Gen II</h3>
+                        <p class="font-label-caps text-xs text-on-surface-variant mb-4">Universal Fitment</p>
+                        <div class="mt-auto flex justify-between items-center">
+                            <span class="font-bold text-lg text-primary">$1,850.00</span>
+                            <button class="text-primary hover:bg-primary/10 p-2 rounded-full transition-colors"
+                                data-cart-add data-id="garrett-gtx3582r" data-name="Garrett GTX3582R Gen II" data-price="1850" data-icon="settings">
+                                <span class="material-symbols-outlined">add_shopping_cart</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 3 -->
+                <div class="border-metallic border rounded-xl overflow-hidden card-glow transition-all flex flex-col group bg-surface-container-lowest">
+                    <div class="w-full aspect-square bg-surface-container-high bg-cover bg-center border-b border-metallic" style="background-image: url('assets/brembo-brakes.png');"></div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="font-headline-sm text-lg uppercase mb-1">Brembo Big Brake Kit</h3>
+                        <p class="font-label-caps text-xs text-on-surface-variant mb-4">Fits: BMW M3 (F80)</p>
+                        <div class="mt-auto flex justify-between items-center">
+                            <span class="font-bold text-lg text-primary">$3,200.00</span>
+                            <button class="text-primary hover:bg-primary/10 p-2 rounded-full transition-colors"
+                                data-cart-add data-id="brembo-bbk" data-name="Brembo Big Brake Kit" data-price="3200" data-icon="radio_button_checked">
+                                <span class="material-symbols-outlined">add_shopping_cart</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="border-metallic border rounded-xl overflow-hidden card-glow transition-all flex flex-col group bg-surface-container-lowest">
+                    <div class="w-full aspect-square bg-surface-container-high bg-cover bg-center border-b border-metallic" style="background-image: url('assets/motul-oil.png');"></div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="font-headline-sm text-lg uppercase mb-1">Motul 8100 X-cess 5W40</h3>
+                        <p class="font-label-caps text-xs text-on-surface-variant mb-4">5 Liter Jug</p>
+                        <div class="mt-auto flex justify-between items-center">
+                            <span class="font-bold text-lg text-primary">$45.00</span>
+                            <button class="text-primary hover:bg-primary/10 p-2 rounded-full transition-colors"
+                                data-cart-add data-id="motul-8100" data-name="Motul 8100 X-cess 5W40" data-price="45" data-icon="water_drop">
+                                <span class="material-symbols-outlined">add_shopping_cart</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Custom Order Form -->
+            <div class="border-metallic border rounded-xl p-8 bg-surface-container-lowest card-glow max-w-2xl mx-auto text-center">
+                <span class="material-symbols-outlined text-primary text-[32px] mb-2">build_circle</span>
+                <h3 class="font-headline-sm text-2xl uppercase mb-2">Can't Find Your Part?</h3>
+                <p class="text-on-surface-variant text-sm mb-6">Submit a custom request. We can source vintage, hard-to-find, and specialty performance parts directly through our vendor network.</p>
+                <form class="flex gap-4">
+                    <input type="text" class="flex-grow bg-surface-container border border-metallic text-on-surface rounded-lg p-3 focus:outline-none focus:border-primary transition-colors" placeholder="Enter Part Number or Description...">
+                    <button type="button" class="bg-primary-container text-white px-6 py-3 rounded uppercase font-label-caps font-bold hover:opacity-90 transition-opacity">
+                        Request
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sticky Express Checkout Drawer -->
+    <div id="cartDrawer" class="drawer fixed top-0 right-0 h-full w-full md:w-[400px] bg-surface-container-lowest border-l border-metallic z-[100] shadow-2xl flex flex-col">
+        <div class="p-6 border-b border-metallic flex justify-between items-center bg-surface-container">
+            <h2 class="font-headline-sm text-xl uppercase">Your Cart</h2>
+            <button onclick="document.getElementById('cartDrawer').classList.remove('drawer-open')" class="text-on-surface-variant hover:text-white transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        
+        <div id="cart-items-list" class="flex-grow p-6 overflow-y-auto space-y-4">
+            <!-- Dynamically populated by JS -->
+            <p id="cart-empty-msg" class="text-on-surface-variant text-sm text-center py-8">Your cart is empty.</p>
+        </div>
+
+        <div class="p-6 bg-surface-container border-t border-metallic space-y-4">
+            <div class="flex justify-between text-lg font-bold">
+                <span>Total:</span>
+                <span id="cart-total" class="text-primary">$0.00</span>
+            </div>
+            
+            <div class="space-y-2">
+                <label class="flex items-center gap-2 text-sm text-on-surface-variant">
+                    <input type="radio" name="fulfillment" checked class="text-primary focus:ring-primary bg-surface-container border-metallic">
+                    In-Shop Pickup & Installation
+                </label>
+                <label class="flex items-center gap-2 text-sm text-on-surface-variant">
+                    <input type="radio" name="fulfillment" class="text-primary focus:ring-primary bg-surface-container border-metallic">
+                    Direct Shipping
+                </label>
+            </div>
+
+            <button class="w-full bg-primary-container text-white px-6 py-4 rounded uppercase font-label-caps font-bold hover:opacity-90 transition-opacity flex justify-center items-center gap-2">
+                Checkout (Stripe) <span class="material-symbols-outlined">lock</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-lowest w-full border-t border-outline-variant/20 mt-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-20 max-w-container-max mx-auto">
+            <div class="col-span-1 md:col-span-4 flex flex-col md:flex-row items-start md:items-center gap-8 mb-8 md:flex-col">
+                <div class="flex items-center"><img alt="Trilogy Turbos Logo" class="h-[120px] w-auto object-contain mx-auto" src="assets/logo.png"></div>
+                <div class="flex flex-wrap gap-6 font-body-md text-body-md text-on-surface-variant justify-center">
+                    <span class="hover:text-primary-container transition-colors">Lake Park, FL 33403</span>
+                    <span class="hover:text-primary-container transition-colors">(561) 555-0123</span>
+                    <span class="hover:text-primary-container transition-colors">Mon-Fri: 8AM-6PM</span>
+                    <span class="hover:text-primary-container transition-colors">5-Star Google Rated</span>
+                </div>
+            </div>
+            <div class="col-span-1 md:col-span-4 border-t border-outline-variant/20 pt-8 mt-4 text-center md:text-left">
+                <p class="font-body-md text-body-md text-on-surface-variant">© 2024 Trilogy Turbos LLC. High-Velocity Precision.</p>
+            </div>
+        </div>
+    </footer>
+
+<script>
+    // --- Mobile Menu Toggle ---
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    }
+
+    // --- Cart Engine ---
+    let cart = {}; // { id: { name, price, icon, qty } }
+
+    function formatPrice(cents) {
+        return '$' + cents.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+
+    function renderCart() {
+        const list = document.getElementById('cart-items-list');
+        const emptyMsg = document.getElementById('cart-empty-msg');
+        const totalEl = document.getElementById('cart-total');
+        const badge = document.getElementById('cart-badge');
+
+        // Remove old dynamic items
+        list.querySelectorAll('.cart-item-row').forEach(el => el.remove());
+
+        const ids = Object.keys(cart);
+        const totalQty = ids.reduce((sum, id) => sum + cart[id].qty, 0);
+        const totalPrice = ids.reduce((sum, id) => sum + cart[id].price * cart[id].qty, 0);
+
+        if (ids.length === 0) {
+            emptyMsg.classList.remove('hidden');
+        } else {
+            emptyMsg.classList.add('hidden');
+            ids.forEach(id => {
+                const item = cart[id];
+                const row = document.createElement('div');
+                row.className = 'cart-item-row flex gap-4 border-b border-white/10 pb-4 items-start';
+                row.innerHTML = `
+                    <div class="w-12 h-12 shrink-0 bg-surface-container-high rounded border border-white/10 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-on-surface-variant text-[20px]">${item.icon}</span>
+                    </div>
+                    <div class="flex-grow min-w-0">
+                        <h4 class="font-headline-sm text-sm uppercase truncate">${item.name}</h4>
+                        <div class="flex items-center gap-2 mt-1">
+                            <button class="w-6 h-6 rounded bg-surface-container-high border border-white/10 text-xs flex items-center justify-center hover:bg-primary/20 transition-colors"
+                                onclick="changeQty('${id}', -1)">−</button>
+                            <span class="font-label-caps text-xs text-on-surface-variant w-4 text-center">${item.qty}</span>
+                            <button class="w-6 h-6 rounded bg-surface-container-high border border-white/10 text-xs flex items-center justify-center hover:bg-primary/20 transition-colors"
+                                onclick="changeQty('${id}', 1)">+</button>
+                        </div>
+                        <span class="text-primary font-bold text-sm mt-1 block">${formatPrice(item.price * item.qty)}</span>
+                    </div>
+                    <button class="shrink-0 text-on-surface-variant hover:text-red-400 transition-colors mt-1" onclick="removeItem('${id}')">
+                        <span class="material-symbols-outlined text-[20px]">delete</span>
+                    </button>
+                `;
+                list.appendChild(row);
+            });
+        }
+
+        totalEl.textContent = formatPrice(totalPrice);
+        badge.textContent = totalQty;
+        if (totalQty > 0) {
+            badge.classList.remove('hidden');
+        } else {
+            badge.classList.add('hidden');
+        }
+    }
+
+    function addToCart(id, name, price, icon) {
+        if (cart[id]) {
+            cart[id].qty++;
+        } else {
+            cart[id] = { name, price: parseFloat(price), icon, qty: 1 };
+        }
+        // Open cart drawer
+        document.getElementById('cartDrawer').classList.add('drawer-open');
+        renderCart();
+    }
+
+    function changeQty(id, delta) {
+        if (!cart[id]) return;
+        cart[id].qty += delta;
+        if (cart[id].qty <= 0) delete cart[id];
+        renderCart();
+    }
+
+    function removeItem(id) {
+        delete cart[id];
+        renderCart();
+    }
+
+    // Attach Add to Cart listeners
+    document.querySelectorAll('[data-cart-add]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            addToCart(
+                btn.dataset.id,
+                btn.dataset.name,
+                btn.dataset.price,
+                btn.dataset.icon
+            );
+        });
+    });
+
+    // Initial render
+    renderCart();
+</script>
+</body>
+</html>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Pre-Owned Vehicle Sales | Trilogy Turbos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        try{
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        "colors": {
+                            "primary-container": "#ff571a",
+                            "surface-container-high": "#222a3d",
+                            "surface-container": "#171f33",
+                            "inverse-on-surface": "#283044",
+                            "secondary-fixed-dim": "#b9c8de",
+                            "inverse-primary": "#ae3200",
+                            "on-tertiary": "#263143",
+                            "on-surface": "#dae2fd",
+                            "surface-tint": "#ffb59e",
+                            "secondary-fixed": "#d4e4fa",
+                            "surface-container-lowest": "#060e20",
+                            "on-secondary": "#233143",
+                            "tertiary": "#bcc7de",
+                            "inverse-surface": "#dae2fd",
+                            "on-primary": "#5e1700",
+                            "primary": "#ffb59e",
+                            "on-surface-variant": "#e6beb2",
+                            "outline": "#ad897e",
+                            "on-background": "#dae2fd",
+                            "on-error": "#690005",
+                            "surface-container-low": "#131b2e",
+                            "surface-dim": "#0b1326",
+                            "surface": "#0b1326",
+                            "background": "#0b1326",
+                            "secondary": "#b9c8de",
+                            "error": "#ffb4ab",
+                            "surface-bright": "#31394d"
+                        },
+                        "borderRadius": {
+                            "DEFAULT": "0.125rem",
+                            "lg": "0.25rem",
+                            "xl": "0.5rem",
+                            "full": "0.75rem"
+                        },
+                        "spacing": {
+                            "gutter": "24px",
+                            "margin-desktop": "40px",
+                            "unit": "8px",
+                            "container-max": "1280px",
+                            "margin-mobile": "16px"
+                        },
+                        "fontFamily": {
+                            "display-lg": ["Archivo Narrow"],
+                            "headline-sm": ["Archivo Narrow"],
+                            "headline-md": ["Archivo Narrow"],
+                            "body-lg": ["Inter"],
+                            "body-md": ["Inter"],
+                            "label-caps": ["JetBrains Mono"]
+                        }
+                    }
+                }
+            }
+        }catch(_e){}
+    </script>
+    <link rel="stylesheet" href="assets/css/base.css">
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased overflow-x-hidden pt-[100px]">
+
+    <!-- TopNavBar -->
+    <nav class="bg-[#0d2142] fixed top-0 w-full z-50 border-b border-white/10 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-2">
+        <div class="flex items-center">
+            <img alt="Trilogy Turbos Logo" class="h-16 w-auto object-contain" src="assets/logo.png">
+        </div>
+        <div class="hidden md:flex gap-8 items-center absolute left-1/2 -translate-x-1/2">
+<a class="text-white hover:text-primary transition-colors font-body-md" href="index.html">Home</a>
+<a class="text-white hover:text-primary transition-colors font-body-md" href="repair-services.html">Services</a>
+<a class="text-primary hover:text-primary transition-colors font-body-md border-b-2 border-primary pb-1" href="vehicle-sales.html">Sales</a>
+<a class="text-white hover:text-primary transition-colors font-body-md" href="parts-store.html">Parts</a>
+<a class="text-white hover:text-primary transition-colors font-body-md" href="about.html">About</a>
+<a class="text-white hover:text-primary transition-colors font-body-md" href="contact.html">Contact</a>
+</div>
+        <div class="flex items-center gap-4">
+            <button class="md:hidden text-white" id="menu-toggle">
+                <span class="material-symbols-outlined text-[28px]">menu</span>
+            </button>
+        </div>
+    </nav>
+
+<!-- Mobile drawer -->
+<div id="mobile-menu" class="fixed top-[80px] left-0 w-full z-40 bg-[#0d2142] border-b border-white/10 hidden md:hidden">
+<div class="flex flex-col px-margin-mobile py-4">
+    <a class="text-white hover:text-primary transition-colors py-3 border-b border-white/10" href="index.html">Home</a>
+    <a class="text-white hover:text-primary transition-colors py-3 border-b border-white/10" href="repair-services.html">Services</a>
+    <a class="text-primary hover:text-primary transition-colors py-3 border-b border-white/10" href="vehicle-sales.html">Sales</a>
+    <a class="text-white hover:text-primary transition-colors py-3 border-b border-white/10" href="parts-store.html">Parts</a>
+    <a class="text-white hover:text-primary transition-colors py-3 border-b border-white/10" href="about.html">About</a>
+    <a class="text-white hover:text-primary transition-colors py-3" href="contact.html">Contact</a>
+</div>
+</div>
+
+    <!-- Header Section -->
+    <section class="py-[60px] bg-surface-container-lowest border-y border-metallic">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
+            <span class="material-symbols-outlined text-primary text-[48px] mb-4">car_rental</span>
+            <h1 class="font-display-lg text-4xl md:text-5xl uppercase mb-4">Pre-Owned Vehicle Showroom</h1>
+            <p class="font-body-lg text-lg text-on-surface-variant max-w-2xl mx-auto">Curated, high-performance, and dependable pre-owned vehicles. Every car passes our rigorous multi-point mechanical inspection.</p>
+        </div>
+    </section>
+
+    <!-- Showroom Grid & Filters -->
+    <section class="py-[60px]">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col lg:flex-row gap-gutter">
+            
+            <!-- Filter Sidebar -->
+            <aside class="w-full lg:w-1/4">
+                <div class="bg-surface-container border border-metallic p-6 rounded-xl sticky top-[120px]">
+                    <div class="flex items-center justify-between border-b border-metallic pb-4 mb-4">
+                        <h3 class="font-headline-sm text-xl uppercase">Filters</h3>
+                        <button class="text-sm font-label-caps text-primary hover:underline">Reset</button>
+                    </div>
+                    
+                    <form class="space-y-6">
+                        <!-- Make -->
+                        <div>
+                            <label class="block font-label-caps text-xs text-on-surface-variant uppercase mb-2">Make</label>
+                            <select class="w-full bg-surface-container-low border border-metallic text-on-surface rounded p-3 focus:outline-none focus:border-primary">
+                                <option>All Makes</option>
+                                <option>Toyota</option>
+                                <option>Ford</option>
+                                <option>Honda</option>
+                                <option>Chevrolet</option>
+                                <option>BMW</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Body Type -->
+                        <div>
+                            <label class="block font-label-caps text-xs text-on-surface-variant uppercase mb-2">Body Type</label>
+                            <select class="w-full bg-surface-container-low border border-metallic text-on-surface rounded p-3 focus:outline-none focus:border-primary">
+                                <option>All Types</option>
+                                <option>Sedan</option>
+                                <option>SUV</option>
+                                <option>Truck</option>
+                                <option>Coupe</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Max Price -->
+                        <div>
+                            <label class="block font-label-caps text-xs text-on-surface-variant uppercase mb-2">Max Price</label>
+                            <select class="w-full bg-surface-container-low border border-metallic text-on-surface rounded p-3 focus:outline-none focus:border-primary">
+                                <option>No Max</option>
+                                <option>Under $10,000</option>
+                                <option>Under $20,000</option>
+                                <option>Under $30,000</option>
+                                <option>Under $40,000</option>
+                            </select>
+                        </div>
+
+                        <!-- Max Mileage -->
+                        <div>
+                            <label class="block font-label-caps text-xs text-on-surface-variant uppercase mb-2">Max Mileage</label>
+                            <select class="w-full bg-surface-container-low border border-metallic text-on-surface rounded p-3 focus:outline-none focus:border-primary">
+                                <option>Any Mileage</option>
+                                <option>Under 30,000 mi</option>
+                                <option>Under 60,000 mi</option>
+                                <option>Under 100,000 mi</option>
+                            </select>
+                        </div>
+                        
+                        <button type="button" class="w-full bg-primary-container text-white px-4 py-3 rounded uppercase font-label-caps font-bold hover:opacity-90 transition-opacity mt-4">
+                            Apply Filters
+                        </button>
+                    </form>
+                </div>
+            </aside>
+
+            <!-- Vehicle Grid -->
+            <div class="w-full lg:w-3/4">
+                <div class="flex justify-between items-center mb-6">
+                    <span class="text-on-surface-variant font-label-caps text-sm">Showing 4 Vehicles</span>
+                    <select class="bg-surface-container border border-metallic text-on-surface rounded p-2 text-sm focus:outline-none focus:border-primary">
+                        <option>Sort By: Recently Added</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                        <option>Mileage: Low to High</option>
+                    </select>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+                    <!-- Vehicle Card 1 -->
+                    <div class="border-metallic border rounded-xl overflow-hidden card-glow transition-all flex flex-col group bg-surface-container-lowest">
+                        <div class="w-full aspect-square bg-surface-container-high bg-cover bg-center border-b border-metallic relative" style="background-image: url('assets/tacoma.png');">
+                            <div class="absolute top-4 left-4 bg-primary text-on-primary font-label-caps text-xs px-2 py-1 rounded font-bold uppercase">Great Deal</div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="font-headline-md text-2xl uppercase mb-1">2018 Toyota Tacoma TRD</h3>
+                            <p class="font-label-caps text-sm text-on-surface-variant mb-4">44,500 miles • Clean CARFAX</p>
+                            <div class="font-display-lg text-primary text-3xl mb-6">$31,500</div>
+                            <div class="grid grid-cols-2 gap-3 mt-auto">
+                                <button class="bg-primary-container text-white py-3 rounded uppercase font-label-caps font-bold hover:opacity-90 transition-opacity text-center text-xs">
+                                    Reserve ($250)
+                                </button>
+                                <button class="bg-surface-container border border-metallic text-on-surface py-3 rounded uppercase font-label-caps font-bold hover:bg-surface-container-high transition-colors text-center text-xs">
+                                    Finance
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vehicle Card 2 -->
+                    <div class="border-metallic border rounded-xl overflow-hidden card-glow transition-all flex flex-col group bg-surface-container-lowest">
+                        <div class="w-full aspect-square bg-surface-container-high bg-cover bg-center border-b border-metallic" style="background-image: url('assets/crv.png');"></div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="font-headline-md text-2xl uppercase mb-1">2016 Honda CR-V EX-L</h3>
+                            <p class="font-label-caps text-sm text-on-surface-variant mb-4">68,200 miles • 1 Owner</p>
+                            <div class="font-display-lg text-primary text-3xl mb-6">$17,900</div>
+                            <div class="grid grid-cols-2 gap-3 mt-auto">
+                                <button class="bg-primary-container text-white py-3 rounded uppercase font-label-caps font-bold hover:opacity-90 transition-opacity text-center text-xs">
+                                    Reserve ($250)
+                                </button>
+                                <button class="bg-surface-container border border-metallic text-on-surface py-3 rounded uppercase font-label-caps font-bold hover:bg-surface-container-high transition-colors text-center text-xs">
+                                    Finance
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Vehicle Card 3 -->
+                    <div class="border-metallic border rounded-xl overflow-hidden card-glow transition-all flex flex-col group bg-surface-container-lowest">
+                        <div class="w-full aspect-square bg-surface-container-high bg-cover bg-center border-b border-metallic relative" style="background-image: url('assets/f150.png');"></div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="font-headline-md text-2xl uppercase mb-1">2019 Ford F-150 XLT</h3>
+                            <p class="font-label-caps text-sm text-on-surface-variant mb-4">35,100 miles • EcoBoost</p>
+                            <div class="font-display-lg text-primary text-3xl mb-6">$29,995</div>
+                            <div class="grid grid-cols-2 gap-3 mt-auto">
+                                <button class="bg-primary-container text-white py-3 rounded uppercase font-label-caps font-bold hover:opacity-90 transition-opacity text-center text-xs">
+                                    Reserve ($250)
+                                </button>
+                                <button class="bg-surface-container border border-metallic text-on-surface py-3 rounded uppercase font-label-caps font-bold hover:bg-surface-container-high transition-colors text-center text-xs">
+                                    Finance
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Vehicle Card 4 -->
+                    <div class="border-metallic border rounded-xl overflow-hidden card-glow transition-all flex flex-col group bg-surface-container-lowest">
+                        <div class="w-full aspect-square bg-surface-container-high bg-cover bg-center border-b border-metallic" style="background-image: url('assets/m3.png');">
+                            <div class="absolute top-4 left-4 bg-error text-on-error font-label-caps text-xs px-2 py-1 rounded font-bold uppercase">Pending Sale</div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="font-headline-md text-2xl uppercase mb-1">2015 BMW M3 (F80)</h3>
+                            <p class="font-label-caps text-sm text-on-surface-variant mb-4">52,000 miles • Manual</p>
+                            <div class="font-display-lg text-on-surface-variant text-3xl mb-6 line-through">$42,500</div>
+                            <div class="grid grid-cols-2 gap-3 mt-auto opacity-50 pointer-events-none">
+                                <button class="bg-primary-container text-white py-3 rounded uppercase font-label-caps font-bold text-center text-xs">
+                                    Reserve ($250)
+                                </button>
+                                <button class="bg-surface-container border border-metallic text-on-surface py-3 rounded uppercase font-label-caps font-bold text-center text-xs">
+                                    Finance
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vehicle Card 5 -->
+                    <div class="border-metallic border rounded-xl overflow-hidden card-glow transition-all flex flex-col group bg-surface-container-lowest">
+                        <div class="w-full aspect-square bg-surface-container-high bg-cover bg-center border-b border-metallic" style="background-image: url('assets/camry.png');"></div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="font-headline-md text-2xl uppercase mb-1">2008 Toyota Camry</h3>
+                            <p class="font-label-caps text-sm text-on-surface-variant mb-4">142,000 miles • Clean Title</p>
+                            <div class="font-display-lg text-primary text-3xl mb-6">$5,900</div>
+                            <div class="grid grid-cols-2 gap-3 mt-auto">
+                                <button class="bg-primary-container text-white py-3 rounded uppercase font-label-caps font-bold hover:opacity-90 transition-opacity text-center text-xs">
+                                    Reserve ($250)
+                                </button>
+                                <button class="bg-surface-container border border-metallic text-on-surface py-3 rounded uppercase font-label-caps font-bold hover:bg-surface-container-high transition-colors text-center text-xs">
+                                    Finance
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vehicle Card 6 -->
+                    <div class="border-metallic border rounded-xl overflow-hidden card-glow transition-all flex flex-col group bg-surface-container-lowest">
+                        <div class="w-full aspect-square bg-surface-container-high bg-cover bg-center border-b border-metallic" style="background-image: url('assets/accord.png');"></div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="font-headline-md text-2xl uppercase mb-1">2010 Honda Accord</h3>
+                            <p class="font-label-caps text-sm text-on-surface-variant mb-4">128,000 miles • Leather Seats</p>
+                            <div class="font-display-lg text-primary text-3xl mb-6">$6,800</div>
+                            <div class="grid grid-cols-2 gap-3 mt-auto">
+                                <button class="bg-primary-container text-white py-3 rounded uppercase font-label-caps font-bold hover:opacity-90 transition-opacity text-center text-xs">
+                                    Reserve ($250)
+                                </button>
+                                <button class="bg-surface-container border border-metallic text-on-surface py-3 rounded uppercase font-label-caps font-bold hover:bg-surface-container-high transition-colors text-center text-xs">
+                                    Finance
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vehicle Card 7 -->
+                    <div class="border-metallic border rounded-xl overflow-hidden card-glow transition-all flex flex-col group bg-surface-container-lowest">
+                        <div class="w-full aspect-square bg-surface-container-high bg-cover bg-center border-b border-metallic" style="background-image: url('assets/malibu.png');"></div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="font-headline-md text-2xl uppercase mb-1">2014 Chevrolet Malibu</h3>
+                            <p class="font-label-caps text-sm text-on-surface-variant mb-4">105,000 miles • Turbocharged</p>
+                            <div class="font-display-lg text-primary text-3xl mb-6">$8,400</div>
+                            <div class="grid grid-cols-2 gap-3 mt-auto">
+                                <button class="bg-primary-container text-white py-3 rounded uppercase font-label-caps font-bold hover:opacity-90 transition-opacity text-center text-xs">
+                                    Reserve ($250)
+                                </button>
+                                <button class="bg-surface-container border border-metallic text-on-surface py-3 rounded uppercase font-label-caps font-bold hover:bg-surface-container-high transition-colors text-center text-xs">
+                                    Finance
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vehicle Card 8 -->
+                    <div class="border-metallic border rounded-xl overflow-hidden card-glow transition-all flex flex-col group bg-surface-container-lowest">
+                        <div class="w-full aspect-square bg-surface-container-high bg-cover bg-center border-b border-metallic" style="background-image: url('assets/fusion.png');"></div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="font-headline-md text-2xl uppercase mb-1">2009 Ford Fusion</h3>
+                            <p class="font-label-caps text-sm text-on-surface-variant mb-4">135,000 miles • V6 Engine</p>
+                            <div class="font-display-lg text-primary text-3xl mb-6">$4,900</div>
+                            <div class="grid grid-cols-2 gap-3 mt-auto">
+                                <button class="bg-primary-container text-white py-3 rounded uppercase font-label-caps font-bold hover:opacity-90 transition-opacity text-center text-xs">
+                                    Reserve ($250)
+                                </button>
+                                <button class="bg-surface-container border border-metallic text-on-surface py-3 rounded uppercase font-label-caps font-bold hover:bg-surface-container-high transition-colors text-center text-xs">
+                                    Finance
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trade-In Appraisal Form -->
+    <section class="py-[80px] bg-surface-container-lowest border-t border-metallic">
+        <div class="max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="border-metallic border rounded-xl p-8 bg-surface-container relative overflow-hidden card-glow">
+                <div class="absolute top-0 right-0 w-48 h-48 bg-primary-container/10 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2"></div>
+                
+                <div class="text-center mb-8 relative z-10">
+                    <span class="material-symbols-outlined text-primary text-[48px] mb-2">currency_exchange</span>
+                    <h2 class="font-headline-md text-3xl uppercase mb-2">Trade-In Appraisal</h2>
+                    <p class="text-on-surface-variant">Looking to upgrade? We offer fair market value for your current vehicle. Submit your details for a digital appraisal.</p>
+                </div>
+
+                <form class="space-y-6 relative z-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block font-label-caps text-xs text-on-surface-variant uppercase mb-2">Year</label>
+                            <input type="text" class="w-full bg-surface-container-low border border-metallic text-on-surface rounded-lg p-3 focus:outline-none focus:border-primary">
+                        </div>
+                        <div>
+                            <label class="block font-label-caps text-xs text-on-surface-variant uppercase mb-2">Make</label>
+                            <input type="text" class="w-full bg-surface-container-low border border-metallic text-on-surface rounded-lg p-3 focus:outline-none focus:border-primary">
+                        </div>
+                        <div>
+                            <label class="block font-label-caps text-xs text-on-surface-variant uppercase mb-2">Model</label>
+                            <input type="text" class="w-full bg-surface-container-low border border-metallic text-on-surface rounded-lg p-3 focus:outline-none focus:border-primary">
+                        </div>
+                        <div>
+                            <label class="block font-label-caps text-xs text-on-surface-variant uppercase mb-2">Current Mileage</label>
+                            <input type="text" class="w-full bg-surface-container-low border border-metallic text-on-surface rounded-lg p-3 focus:outline-none focus:border-primary">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block font-label-caps text-xs text-on-surface-variant uppercase mb-2">VIN Number (Optional)</label>
+                        <input type="text" class="w-full bg-surface-container-low border border-metallic text-on-surface rounded-lg p-3 focus:outline-none focus:border-primary">
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block font-label-caps text-xs text-on-surface-variant uppercase mb-2">Your Name</label>
+                            <input type="text" class="w-full bg-surface-container-low border border-metallic text-on-surface rounded-lg p-3 focus:outline-none focus:border-primary">
+                        </div>
+                        <div>
+                            <label class="block font-label-caps text-xs text-on-surface-variant uppercase mb-2">Phone Number</label>
+                            <input type="text" class="w-full bg-surface-container-low border border-metallic text-on-surface rounded-lg p-3 focus:outline-none focus:border-primary">
+                        </div>
+                    </div>
+
+                    <button type="button" class="w-full bg-primary-container text-white px-6 py-4 rounded uppercase font-label-caps font-bold hover:opacity-90 transition-opacity mt-4 flex justify-center items-center gap-2">
+                        Get Appraisal Estimate <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-lowest w-full border-t border-outline-variant/20">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-20 max-w-container-max mx-auto">
+            <div class="col-span-1 md:col-span-4 flex flex-col md:flex-row items-start md:items-center gap-8 mb-8 md:flex-col">
+                <div class="flex items-center"><img alt="Trilogy Turbos Logo" class="h-[120px] w-auto object-contain mx-auto" src="assets/logo.png"></div>
+                <div class="flex flex-wrap gap-6 font-body-md text-body-md text-on-surface-variant justify-center">
+                    <span class="hover:text-primary-container transition-colors">Lake Park, FL 33403</span>
+                    <span class="hover:text-primary-container transition-colors">(561) 555-0123</span>
+                    <span class="hover:text-primary-container transition-colors">Mon-Fri: 8AM-6PM</span>
+                    <span class="hover:text-primary-container transition-colors">5-Star Google Rated</span>
+                </div>
+            </div>
+            <div class="col-span-1 md:col-span-4 border-t border-outline-variant/20 pt-8 mt-4 text-center md:text-left">
+                <p class="font-body-md text-body-md text-on-surface-variant">© 2024 Trilogy Turbos LLC. High-Velocity Precision.</p>
+            </div>
+        </div>
+    </footer>
+
+<script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        if (menuToggle && menu) {
+            menuToggle.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>

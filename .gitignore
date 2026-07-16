@@ -7,7 +7,10 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
+
+# Build output
 dist
 dist-ssr
 *.local
@@ -23,4 +26,25 @@ dist-ssr
 *.sln
 *.sw?
 
+# Vercel
 .vercel
+
+# Dev tooling / Antigravity-specific
+public/devtoolbar.js
+devtoolbar.js
+devtoolbar-bridge.mjs
+.devtoolbar-checkpoints.json
+.devtoolbar_tmp.txt
+Watch-AntigravityInbox.ps1
+start_vibe_bridge.bat
+inject-interactive.ps1
+deploy-portal.ps1
+stitch_assets/
+stitch_components/
+
+# Python helper scripts
+update_index.py
+update_hero_path.py
+update_services.py
+sync_vibe.py
+vibe_installer.py
